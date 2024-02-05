@@ -7,13 +7,15 @@ createApp({
     },
     methods:{
 
-        generaEmail(){
-            // Quando effettuiamo una chiamata HTTP e tutto funziona correttamente,
-            // otteniamo un'istruzione da inserire nel blocco THEN
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then ((risultato) => {
-                console.log(risultato)
-            })
-        }
+        generaEmail() {
 
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((email) => {
+                // console.log(email.data.response);
+
+                for (let i = 1; i <= 10; i++) {
+                    console.log(email.data.response);
+                }
+            })
+        },
     },
-}).mount('#app')
+}).mount('#app');
