@@ -7,15 +7,14 @@ createApp({
     },
     methods:{
 
-        generaEmail() {
+        generaEmail(){
 
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((email) => {
-                // console.log(email.data.response);
+            for (let i = 0; i < 10; i++){
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((email) => {
+                console.log(email.data.response)
 
-                for (let i = 1; i <= 10; i++) {
-                    console.log(email.data.response);
-                }
-            })
+                })
+            }
         },
-    },
+    }
 }).mount('#app');
